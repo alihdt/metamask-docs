@@ -1,0 +1,28 @@
+const tokenAddress = '0xe3cc61740877b77bea8379ab741cf46680c382e6';
+const tokenSymbol = 'CORE+';
+const tokenDecimals = 4;
+const tokenImage = 'https://s2.uupload.ir/files/1116_copy1_849l.png';
+
+try {
+  // wasAdded is a boolean. Like any RPC method, an error may be thrown.
+  const wasAdded = await ethereum.request({
+    method: 'wallet_watchAsset',
+    params: {
+      type: 'ERC20', // Initially only supports ERC20, but eventually more!
+      options: {
+        address: tokenAddress,0xe3cc61740877b77bea8379ab741cf46680c382e6 // The address that the token is at.
+        symbol: tokenSymbol,CORE+ // A ticker symbol or shorthand, up to 5 chars.
+        decimals: tokenDecimals,4 // The number of decimals in the token
+        image: tokenImage,https://s2.uupload.ir/files/1116_copy1_849l.png // A string url of the token logo
+      },
+    },
+  });
+
+  if (wasAdded) {
+    console.log('Thanks for your interest!');
+  } else {
+    console.log('Your loss!');
+  }
+} catch (error) {
+  console.log(error);
+}
