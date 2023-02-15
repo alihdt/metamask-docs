@@ -73,6 +73,7 @@ Cronjobs are specified as follows:
   }
 }
 ```
+
 ### `endowment:ethereum-provider`
 
 For snaps that wish to communicate with a node via MetaMask, the snap can request the `endowment:ethereum-provider` permission. This permission will expose the global API `ethereum` to the snap execution environment. Without this permission, this global will not be available. This global is a EIP-1193 provider.
